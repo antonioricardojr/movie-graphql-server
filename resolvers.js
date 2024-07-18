@@ -1,6 +1,9 @@
-import fetch from "node-fetch";
-const API_URL = 'https://codeflix-api-sand.vercel.app/';
+import { config } from 'dotenv';
+config();
 
+import fetch from "node-fetch";
+const API_URL = process.env.API_URL;
+console.log(API_URL);
 const resolvers = {
     Query: {
         async movies() {
